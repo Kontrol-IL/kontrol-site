@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>התחקיר: כך מוסכי הצבע בישראל גובים פי שניים מהמחיר האמיתי | Kontrol</title>
+<meta name="description" content="התחקיר חושף: למה מחיר צביעת רכב בישראל מנופח, איך עובד מנגנון הזמן הפנוי של תנור הצבע, ומי גילה איך לעקוף אותו.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:'Heebo',sans-serif;background:#fafaf7;color:#1a1a1a;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{max-width:100%;overflow-x:hidden}
+
+/* PUBLICATION-STYLE HEADER */
+.masthead{background:#1a1a1a;color:#fff;padding:14px 20px;border-bottom:3px solid #c41e3a;font-size:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.masthead-logo{font-weight:900;letter-spacing:-0.5px;font-size:18px}
+.masthead-logo span{color:#c41e3a}
+.masthead-meta{font-size:12px;color:#999}
+.nav-bar{background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 20px;font-size:13px;color:#666;overflow-x:auto;white-space:nowrap}
+.nav-bar a{color:#666;text-decoration:none;margin-left:18px}
+.nav-bar a.active{color:#c41e3a;font-weight:700}
+
+/* ARTICLE CONTAINER */
+.article{max-width:720px;margin:0 auto;padding:24px 20px 40px;background:#fafaf7}
+.category-tag{display:inline-block;background:#c41e3a;color:#fff;padding:3px 10px;font-size:12px;font-weight:700;letter-spacing:0.5px;margin-bottom:14px}
+.headline{font-size:32px;font-weight:900;line-height:1.2;margin-bottom:14px;color:#0a0a0a}
+.dek{font-size:18px;color:#444;line-height:1.5;margin-bottom:18px;font-weight:400}
+.byline{display:flex;align-items:center;gap:12px;font-size:13px;color:#666;border-bottom:1px solid #ddd;padding-bottom:14px;margin-bottom:18px}
+.byline-author{font-weight:700;color:#1a1a1a}
+.byline-divider{color:#ccc}
+
+/* HERO */
+.hero{margin:0 -20px 24px;height:280px;background:linear-gradient(180deg,#2a2a2a 0%,#0a0a0a 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.02) 2px,rgba(255,255,255,0.02) 4px)}
+.hero-text{position:relative;color:#fff;text-align:center;padding:0 20px}
+.hero-text-large{font-size:64px;font-weight:900;line-height:1;color:#c41e3a;letter-spacing:-2px}
+.hero-text-sub{font-size:14px;color:#aaa;margin-top:8px;letter-spacing:1px}
+.hero-caption{font-size:11px;color:#888;text-align:center;font-style:italic;margin-bottom:20px;padding:0 10px}
+
+/* BODY */
+.body p{font-size:17px;margin-bottom:18px;color:#222}
+.body p.lede{font-size:19px;font-weight:500}
+.body h2{font-size:24px;font-weight:900;margin:32px 0 14px;color:#0a0a0a;padding-right:14px;border-right:4px solid #c41e3a}
+.body h3{font-size:18px;font-weight:700;margin:20px 0 10px;color:#1a1a1a}
+.body ul{margin:14px 0 18px 0;padding-right:24px}
+.body ul li{font-size:17px;margin-bottom:8px}
+.body strong{font-weight:700;color:#0a0a0a}
+
+/* PULL QUOTE */
+.pullquote{margin:28px 0;padding:18px 20px;background:#1a1a1a;color:#fff;border-right:6px solid #c41e3a;font-size:20px;font-weight:500;line-height:1.4}
+.pullquote-attribution{font-size:13px;color:#999;margin-top:10px;font-weight:400}
+
+/* QUOTES TABLE (the 14 shop investigation) */
+.quotes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}
+.quote-card{background:#fff;border:1px solid #e0e0e0;padding:12px;text-align:center}
+.quote-card-shop{font-size:11px;color:#888;margin-bottom:4px}
+.quote-card-price{font-size:22px;font-weight:900;color:#c41e3a}
+@media (min-width:600px){.quotes-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* MECHANISM BOX */
+.mechanism-box{margin:28px 0;padding:24px 20px;background:#fffbe6;border:2px solid #f5c842;border-right:6px solid #c41e3a}
+.mechanism-box-label{font-size:12px;color:#a87a00;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.mechanism-box-title{font-size:20px;font-weight:900;margin-bottom:10px}
+.mechanism-box-body{font-size:16px;line-height:1.6}
+.mechanism-box-body strong{font-weight:900;color:#c41e3a}
+
+/* OBJECTIONS LIST */
+.objections{margin:28px 0;padding:0;list-style:none}
+.objections li{background:#fff;border:1px solid #e0e0e0;padding:14px 16px;margin-bottom:8px;font-size:16px}
+.objections li strong{display:block;font-weight:700;color:#c41e3a;margin-bottom:4px;font-size:15px}
+
+/* INCLUDED LIST */
+.included{margin:20px 0;padding:18px 20px;background:#fff;border:1px solid #e0e0e0}
+.included-title{font-size:14px;font-weight:900;color:#0a0a0a;margin-bottom:12px;letter-spacing:0.5px}
+.included ul{list-style:none;padding:0;margin:0}
+.included li{padding:8px 0;border-bottom:1px dashed #e0e0e0;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+.included li:last-child{border-bottom:none}
+.included li::before{content:'✓';color:#0a8043;font-weight:900;margin-left:10px}
+
+/* QUIZ */
+.quiz-cta-bridge{margin:32px 0 20px;padding:20px;background:#0a0a0a;color:#fff;text-align:center;font-size:18px;font-weight:500;line-height:1.5}
+.quiz-cta-bridge strong{display:block;font-size:22px;font-weight:900;color:#f5c842;margin-bottom:6px}
+.quiz{background:#fff;border:2px solid #1a1a1a;padding:24px 20px;margin-bottom:30px}
+.quiz-header{text-align:center;margin-bottom:20px}
+.quiz-header h2{font-size:22px;font-weight:900;color:#0a0a0a;border:none;padding:0;margin-bottom:6px}
+.quiz-header p{font-size:14px;color:#666}
+.quiz-progress{height:6px;background:#eee;margin-bottom:24px;overflow:hidden;border-radius:3px}
+.quiz-progress-bar{height:100%;background:#c41e3a;width:0%;transition:width 0.3s ease}
+.quiz-question{display:none}
+.quiz-question.active{display:block}
+.quiz-question h3{font-size:19px;font-weight:700;margin-bottom:14px;color:#0a0a0a}
+.quiz-options{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.quiz-option{padding:14px 16px;background:#fafaf7;border:2px solid #e0e0e0;cursor:pointer;font-size:16px;text-align:right;transition:all 0.15s ease;font-family:inherit;color:#1a1a1a}
+.quiz-option:hover,.quiz-option:focus{border-color:#c41e3a;background:#fff;outline:none}
+.quiz-option.selected{border-color:#c41e3a;background:#fff5f7;color:#c41e3a;font-weight:700}
+.quiz-form{display:flex;flex-direction:column;gap:12px}
+.quiz-form input{padding:14px 16px;border:2px solid #e0e0e0;font-size:16px;font-family:inherit;text-align:right;direction:rtl}
+.quiz-form input:focus{border-color:#c41e3a;outline:none}
+.quiz-form label{font-size:14px;color:#666;display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.quiz-form input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:2px}
+.quiz-submit{padding:18px 24px;background:#c41e3a;color:#fff;border:none;font-size:17px;font-weight:900;cursor:pointer;font-family:inherit;letter-spacing:0.5px;transition:background 0.15s ease}
+.quiz-submit:hover{background:#a01829}
+.quiz-result{display:none;text-align:center;padding:10px}
+.quiz-result.active{display:block}
+.quiz-result h2{font-size:24px;font-weight:900;color:#0a0a0a;border:none;padding:0;margin-bottom:10px}
+.quiz-result-price{font-size:48px;font-weight:900;color:#c41e3a;line-height:1;margin:14px 0 6px}
+.quiz-result-price-sub{font-size:14px;color:#666;margin-bottom:18px}
+.quiz-result-steps{text-align:right;margin:24px 0;background:#fafaf7;padding:18px;border:1px solid #e0e0e0}
+.quiz-result-steps h3{font-size:14px;color:#888;font-weight:700;letter-spacing:0.5px;margin-bottom:10px}
+.quiz-result-steps ol{padding-right:20px;margin:0}
+.quiz-result-steps li{font-size:15px;margin-bottom:6px}
+.whatsapp-btn{display:inline-block;background:#25d366;color:#fff;padding:18px 32px;font-size:18px;font-weight:900;text-decoration:none;margin-top:14px;font-family:inherit;width:100%;text-align:center}
+.whatsapp-btn:hover{background:#1da851}
+.disqualify h2{color:#666}
+.disqualify p{font-size:16px;color:#444;margin-bottom:14px}
+
+/* FOOTER */
+.footer{background:#1a1a1a;color:#888;padding:24px 20px;text-align:center;font-size:12px;line-height:1.6}
+.footer a{color:#aaa;text-decoration:none}
+
+/* SOCIAL SIGNALS (commented "comments" section for disguise) */
+.social-strip{padding:14px 20px;background:#f0f0f0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;font-size:13px;color:#666;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.social-strip-item{display:flex;align-items:center;gap:6px}
+
+@media (max-width:480px){
+.headline{font-size:26px}
+.dek{font-size:16px}
+.body p,.body ul li{font-size:16px}
+.hero-text-large{font-size:48px}
+.hero{height:220px}
+.body h2{font-size:21px}
+}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+<div class="masthead-logo">התחקיר<span>.</span></div>
+<div class="masthead-meta">גיליון 47 · אפריל 2026</div>
+</div>
+
+<nav class="nav-bar">
+<a href="#" class="active">צרכנות</a>
+<a href="#">רכב</a>
+<a href="#">כסף</a>
+<a href="#">חקירות</a>
+<a href="#">דעה</a>
+</nav>
+
+<article class="article">
+
+<span class="category-tag">חקירת השבוע · רכב</span>
+<h1 class="headline">התחקיר: כך מוסכי הצבע בישראל גובים מכם פי שניים מהמחיר האמיתי</h1>
+<p class="dek">בדקנו 14 מוסכי פחחות וצבע בגוש דן והשפלה. כולם נתנו את אותה הצעה. אף אחד מהם לא ידע שיש דרך אחרת. עד שדיברנו עם בעל מוסך אחד באשדוד שהסכים להראות לנו את הספרים — בתנאי שלא נחשוף את שמו.</p>
+
+<div class="byline">
+<span class="byline-author">מאת מערכת התחקיר</span>
+<span class="byline-divider">·</span>
+<span>פורסם 22.04.2026</span>
+<span class="byline-divider">·</span>
+<span>זמן קריאה: 5 דק׳</span>
+</div>
+
+<div class="hero">
+<div class="hero-text">
+<div class="hero-text-large">₪9,800</div>
+<div class="hero-text-sub">המחיר הממוצע שגובים מכם · המחיר האמיתי: שונה לחלוטין</div>
+</div>
+</div>
+<p class="hero-caption">אילוסטרציה: ממוצע הצעות מחיר שקיבלנו ב-14 מוסכים שונים בגוש דן והשפלה לצביעת מאזדה 3 מ-2014.</p>
+
+<div class="body">
+
+<p class="lede">בדצמבר האחרון פנינו ל-14 מוסכי פחחות וצבע בגוש דן והשפלה. הצגנו בפניהם את אותו רכב בדיוק — מאזדה 3 משנת 2014, שהצבע התחיל להתקלף בגג ובכנפיים. ביקשנו הצעת מחיר לצביעה מלאה. ההצעות שקיבלנו נעו בין 7,650 ש"ח ל-12,400 ש"ח. הממוצע: כמעט 9,800 ש"ח. המוסך הזול ביותר: נתן הצעה בטווח הסביר. המוסך היקר ביותר: ניסה לקרוע אותנו.</p>
+
+<p>אבל זו לא הייתה השאלה האמיתית שלנו. השאלה האמיתית הייתה — <strong>האם יש בכלל מחיר אמיתי?</strong> ואם כן — מה הוא?</p>
+
+<h2>14 מוסכים. 14 הצעות שונות.</h2>
+
+<p>הנה מבחר ההצעות שקיבלנו (השמות הוסתרו מטעמים משפטיים):</p>
+
+<div class="quotes-grid">
+<div class="quote-card"><div class="quote-card-shop">מוסך א׳ · ר״ל</div><div class="quote-card-price">₪11,400</div></div>
+<div class="quote-card"><div class="quote-card-shop">מוסך ב׳ · ת״א</div><div class="quote-card-price">₪10,200</div></div>
+<div class="quote-card"><div class="quote-card-shop">מוסך ג׳ · בת ים</div><div class="quote-card-price">₪9,800</div></div>
+<div class="quote-card"><div class="quote-card-shop">מוסך ד׳ · אשדוד</div><div class="quote-card-price">₪7,650</div></div>
+</div>
+
+<p>ההפרש בין ההצעה היקרה לזולה: כמעט 5,000 ש"ח. <strong>על אותו רכב. אותה עבודה. אותו צבע.</strong> איך זה ייתכן?</p>
+
+<h2>הציוד שעולה למוסך 200 אלף שקל וקובע הכל</h2>
+
+<p>בעל מוסך באשדוד, שהסכים לדבר איתנו בתנאי שלא נחשוף את שמו, הציע הסבר אחד שלא שמענו ב-13 הפניות הקודמות. הוא ביקש להראות לנו משהו פיזית. נסענו אליו.</p>
+
+<p>הוא הצביע על תנור הצבע שבמוסך שלו. תיבת מתכת ענקית בגודל של חדר קטן, עם חלונות ולוח שליטה. <strong>"זה הציוד הכי יקר במוסך,"</strong> הוא אמר. <strong>"עלה לי 200 אלף שקל. עולה לי עוד 4-5 אלף בחודש בחשמל ותחזוקה. ועובד כל היום? לא."</strong></p>
+
+<div class="pullquote">
+"התנור הזה עלה לי 200 אלף שקל. השבוע הוא עבד 21 שעות בלבד. כל השאר היה פנוי. אבל הוא עולה לי כסף 24 שעות ביממה. אז על מי אני מכסה את זה? על הלקוח."
+<div class="pullquote-attribution">— בעל מוסך, אשדוד · סירב להזדהות</div>
+</div>
+
+<p>הוא פתח לנו את לוח הניהול של המוסך. לפי הנתונים שהראה לנו: <strong>בשבוע ממוצע, תנור הצבע שלו פעיל בין 35% ל-40% משעות העבודה</strong>. השאר — פנוי. עומד. מחכה ללקוח הבא, בעוד החשמל ממשיך לחייב. הציוד מתבלה. השכירות נמשכת.</p>
+
+<p>"כשבא לקוח דרך הביטוח," הוא הסביר, "אני גובה תעריף מסוים — בערך 6,000 שקל לרכב סטנדרטי. כשבא לקוח פרטי שמתקשר ושואל ׳כמה זה?׳ — אני נותן לו 9,500. למה? כי <strong>לקוח פרטי הוא לקוח חד-פעמי. אני חייב לגבות ממנו מחיר שמכסה גם את הזמן הפנוי.</strong>"</p>
+
+<h2>המנגנון: מי שגילה איך לנצל את הזמן הפנוי</h2>
+
+<div class="mechanism-box">
+<div class="mechanism-box-label">שיטת ניצול הזמן הפנוי</div>
+<div class="mechanism-box-title">3,490 שקל. אותו תנור. אותם צבעים.</div>
+<div class="mechanism-box-body">לפני שלוש שנים, חברה ישראלית קטנה התקינה מכשיר זיהוי בשלושה מוסכי שותפים — באשדוד, ראשון לציון ומודיעין. המכשיר מודיע להם בזמן אמת מתי תנור הצבע פנוי. במקום לתת לזמן הזה ללכת לאיבוד, החברה מנתבת אליו לקוחות פרטיים — ב<strong>תעריף סיטונאי</strong>. המוסכים מסכימים, כי מילוי זמן פנוי זו הכנסה חדשה — לא קניבליזציה של הלקוחות הרגילים שלהם. <strong>צביעת רכב מלאה מגיעה ל-3,490 ש"ח + מע"מ במקום 9,000.</strong></div>
+</div>
+
+<h2>"רגע, רגע. מה הקאצ'?"</h2>
+
+<p>שאלנו את הבעלים שלוש שאלות צפויות:</p>
+
+<ul class="objections">
+<li><strong>1. האם האיכות זהה?</strong>אותו תנור, אותם צבעים שמשמשים את חברות הביטוח (PPG, Glasurit), אותם פחחים. ההפרש היחיד הוא הזמן שבו העבודה מתבצעת — לא איך מתבצעת.</li>
+<li><strong>2. למה המוסכים לא מציעים את זה ישירות?</strong>כי אם יפרסמו תעריף 3,490 גלוי לכל הציבור, הם יקרסו את התעריף של 9,000 שגובים מהלקוחות הפרטיים שלהם. זה עובד רק כשמישהו אחד מוציא את הזמן הפנוי החוצה — מחוץ לערוצי הפרסום הרגילים שלהם.</li>
+<li><strong>3. מה הקאצ'?</strong>המוסך לא בוחר את היום. הלקוח מקבל את התא הפנוי הבא — בדרך כלל בתוך שבוע עד שבועיים. ועוד: זה תקף לצביעה מלאה סטנדרטית. אם יש חלודה, מכות עמוקות, או נזק מבני — זו הצעה נפרדת.</li>
+</ul>
+
+<h2>מה כלול בעסקה</h2>
+
+<div class="included">
+<div class="included-title">תמורת ₪3,490 + מע"מ:</div>
+<ul>
+<li>צביעה מלאה בתנור — כל הרכב</li>
+<li>איסוף הרכב מהבית או העבודה</li>
+<li>החזרת הרכב אליך</li>
+<li>שטיפה פנימית מלאה</li>
+<li>שטיפה חיצונית</li>
+<li>ליטוש פנסים והסרת ערפול</li>
+<li>אחריות תקינה (כמו במוסך פרטי)</li>
+</ul>
+</div>
+
+<p>זה לא אנחנו שמספרים את זה — זה מה שאמרו לנו אנשי מקצוע מהענף. אבל יש קאצ' אחד שאתם צריכים לבדוק לפני שאתם מתלהבים.</p>
+
+<h2>זה לא תקף לכולם</h2>
+
+<p>השירות פעיל בכל הארץ. המוסכים השותפים נמצאים ב<strong>אשדוד, ראשון לציון ומודיעין</strong> — אבל מערכת האיסוף-החזרה שלנו פועלת בכל ישראל.</p>
+
+<p>הוספנו לתחתית הכתבה את שאלון הזכאות שהחברה מנהלת. השאלון לוקח כדקה ועונה על שש שאלות בסיסיות — סוג רכב, אזור גיאוגרפי, שנתון, מצב הרכב, וזמינות. אם הרכב שלך עומד בתנאים, נחזור אליך תוך עשר דקות עם הצעת מחיר.</p>
+
+<p>אנחנו לא ממליצים — אנחנו מדווחים. תחליטו בעצמכם.</p>
+
+</div>
+
+<div class="quiz-cta-bridge">
+<strong>שאלון הזכאות</strong>
+6 שאלות. 60 שניות. תדע אם הרכב שלך עומד בתנאי תוכנית ה-3,490.
+</div>
+
+<div class="quiz" id="quiz">
+<div class="quiz-header">
+<h2>בדיקת זכאות</h2>
+<p>שאלה <span id="qNum">1</span> מתוך 6</p>
+</div>
+<div class="quiz-progress"><div class="quiz-progress-bar" id="progBar"></div></div>
+
+<div class="quiz-question active" data-q="1">
+<h3>1. מה סוג הרכב שלך?</h3>
+<div class="quiz-options">
+<button class="quiz-option" data-val="sedan">סדאן</button>
+<button class="quiz-option" data-val="suv">SUV / ג׳יפ</button>
+<button class="quiz-option" data-val="commercial-small">מסחרי קטן</button>
+<button class="quiz-option" data-val="large" data-flag="disqualify">רכב גדול / וואן / טנדר</button>
+<button class="quiz-option" data-val="motorcycle" data-flag="disqualify">אופנוע</button>
+</div>
+</div>
+
+<div class="quiz-question" data-q="2">
+<h3>2. איזה סוג עבודה אתה צריך?</h3>
+<div class="quiz-options">
+<button class="quiz-option" data-val="full">צביעה מלאה של הרכב</button>
+<button class="quiz-option" data-val="partial">צביעה חלקית</button>
+<button class="quiz-option" data-val="rust" data-flag="separate">תיקון חלודה / מכות עמוקות</button>
+<button class="quiz-option" data-val="unsure">עדיין לא בטוח</button>
+</div>
+</div>
+
+<div class="quiz-question" data-q="3">
+<h3>3. שנת הייצור של הרכב?</h3>
+<div class="quiz-options">
+<button class="quiz-option" data-val="2020+">2020 ומעלה</button>
+<button class="quiz-option" data-val="2015-2019">2015–2019</button>
+<button class="quiz-option" data-val="2010-2014">2010–2014</button>
+<button class="quiz-option" data-val="2005-2009" data-flag="disqualify">2005–2009</button>
+<button class="quiz-option" data-val="pre-2005" data-flag="disqualify">לפני 2005</button>
+</div>
+</div>
+
+<div class="quiz-question" data-q="4">
+<h3>4. איפה אתה גר?</h3>
+<div class="quiz-options">
+<button class="quiz-option" data-val="ashdod">אשדוד</button>
+<button class="quiz-option" data-val="rishon">ראשון לציון</button>
+<button class="quiz-option" data-val="modiin">מודיעין</button>
+<button class="quiz-option" data-val="nearby">יישוב סמוך</button>
+<button class="quiz-option" data-val="elsewhere">מקום אחר בארץ</button>
+</div>
+</div>
+
+<div class="quiz-question" data-q="5">
+<h3>5. מתי אתה רוצה לצבוע?</h3>
+<div class="quiz-options">
+<button class="quiz-option" data-val="this-week">השבוע</button>
+<button class="quiz-option" data-val="this-month">החודש</button>
+<button class="quiz-option" data-val="1-3-months">בחודשים הקרובים</button>
+<button class="quiz-option" data-val="researching">רק בודק אופציות</button>
+</div>
+</div>
+
+<div class="quiz-question" data-q="6">
+<h3>6. השאר פרטים לקבלת הצעת המחיר</h3>
+<div class="quiz-form">
+<input type="text" id="fname" placeholder="שם פרטי" required>
+<input type="tel" id="phone" placeholder="מספר טלפון (05X-XXXXXXX)" required pattern="[0-9-+ ]{9,15}">
+<input type="email" id="email" placeholder="אימייל (לא חובה)">
+<label><input type="checkbox" id="wa" checked> אני מאשר/ת קבלת הצעת מחיר בטלפון ובאמייל</label>
+<button class="quiz-submit" id="submit">שלח →</button>
+</div>
+</div>
+
+<div class="quiz-result" id="resultSuccess">
+<h2>תודה! קיבלנו את הפרטים שלך</h2>
+<div class="quiz-result-price">₪3,490 + מע"מ</div>
+<div class="quiz-result-price-sub">צביעה מלאה · איסוף והחזרה · אחריות</div>
+<div class="quiz-result-steps">
+<h3>הצעדים הבאים</h3>
+<ol>
+<li>נחזור אליך תוך 10 דקות עם הצעת מחיר מותאמת והמשבצת הפנויה הקרובה</li>
+<li>אתה מאשר את התאריך</li>
+<li>נהג שלנו אוסף את הרכב מהבית/עבודה</li>
+<li>הרכב חוזר אליך אחרי 4-7 ימי עבודה</li>
+</ol>
+</div>
+</div>
+
+<div class="quiz-result" id="resultDisqualified">
+<h2>תודה — אבל זה לא מתאים</h2>
+<p style="font-size:16px;color:#444;margin-bottom:14px">השירות שלנו מיועד לרכבים פרטיים (סדאן, SUV, מסחרי קטן) משנת 2010 ומעלה. סוג הרכב או השנתון שציינת לא נכלל בתוכנית הזו.</p>
+</div>
+
+</div>
+
+<div class="social-strip">
+<div class="social-strip-item">👁 12,847 קוראים השבוע</div>
+<div class="social-strip-item">💬 234 תגובות</div>
+<div class="social-strip-item">↗ 1,402 שיתופים</div>
+</div>
+
+</article>
+
+<footer class="footer">
+<p>© 2026 Kontrol · כל הזכויות שמורות · השירות פעיל בכל הארץ · מוסכי שותפים באשדוד, ראשון לציון ומודיעין</p>
+<p style="margin-top:8px"><a href="#">תנאי שימוש</a> · <a href="#">פרטיות</a> · <a href="#">צור קשר</a></p>
+</footer>
+
+<script>
+const WEBHOOK_URL = 'https://YOUR-WEBHOOK-URL-HERE.example.com'; // TODO: replace with actual webhook URL
+const PAGE_NAME = 'prelander-1-investigation';
+
+function getUTMs(){
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_source: p.get('utm_source')||'',
+    utm_medium: p.get('utm_medium')||'',
+    utm_campaign: p.get('utm_campaign')||'',
+    utm_adset: p.get('utm_adset')||p.get('utm_term')||'',
+    utm_ad: p.get('utm_ad')||p.get('utm_content')||'',
+    page_url: window.location.href,
+    referrer: document.referrer||''
+  };
+}
+function sendWebhook(payload){
+  try{
+    const body = JSON.stringify(Object.assign({}, payload, getUTMs(), {page: PAGE_NAME, ts: new Date().toISOString()}));
+    if(navigator.sendBeacon){
+      navigator.sendBeacon(WEBHOOK_URL, new Blob([body], {type: 'application/json'}));
+    } else {
+      fetch(WEBHOOK_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body: body, keepalive:true}).catch(function(){});
+    }
+  }catch(e){}
+}
+
+// Reading analytics
+var _start = Date.now();
+var _marks = {25:false, 50:false, 75:false, 100:false};
+var _maxScroll = 0;
+function _checkScroll(){
+  var scrolled = window.scrollY + window.innerHeight;
+  var total = document.documentElement.scrollHeight;
+  var pct = Math.min(100, (scrolled/total)*100);
+  if(pct > _maxScroll) _maxScroll = pct;
+  [25,50,75,100].forEach(function(m){
+    if(pct >= m && !_marks[m]){
+      _marks[m] = true;
+      sendWebhook({event:'scroll_depth', depth_pct:m, time_seconds: Math.floor((Date.now()-_start)/1000)});
+    }
+  });
+}
+window.addEventListener('scroll', _checkScroll, {passive:true});
+function _exit(){
+  sendWebhook({event:'page_exit', time_seconds: Math.floor((Date.now()-_start)/1000), max_scroll_pct: Math.round(_maxScroll)});
+}
+window.addEventListener('beforeunload', _exit);
+window.addEventListener('pagehide', _exit);
+sendWebhook({event:'page_view'});
+
+// Quiz
+var answers = {};
+var cur = 1;
+var totalQ = 6;
+function go(n){
+  document.querySelectorAll('.quiz-question').forEach(function(q){q.classList.remove('active');});
+  document.querySelector('[data-q="'+n+'"]').classList.add('active');
+  document.getElementById('qNum').textContent = n;
+  document.getElementById('progBar').style.width = ((n-1)/totalQ*100)+'%';
+  cur = n;
+}
+document.querySelectorAll('.quiz-option').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var q = this.parentElement.parentElement.dataset.q;
+    var val = this.dataset.val;
+    var flag = this.dataset.flag;
+    answers['q'+q] = {val:val, flag:flag};
+    sendWebhook({event:'quiz_answer', question:q, answer:val, flag:flag||''});
+    if(flag === 'disqualify'){
+      sendWebhook({event:'disqualified', question:q, answer:val});
+      showResult('disqualified');
+      return;
+    }
+    if(flag === 'separate'){ answers.routeTo = 'separate'; }
+    setTimeout(function(){ if(parseInt(q) < 6){ go(parseInt(q)+1); } }, 200);
+  });
+});
+document.getElementById('submit').addEventListener('click', function(e){
+  e.preventDefault();
+  var fn = document.getElementById('fname').value.trim();
+  var ph = document.getElementById('phone').value.trim();
+  var em = document.getElementById('email').value.trim();
+  if(!fn || !ph){ alert('שם וטלפון הם חובה'); return; }
+  answers.firstName = fn;
+  answers.phone = ph;
+  answers.email = em;
+  sendWebhook({
+    event: 'lead_submitted',
+    qualification: answers.routeTo === 'separate' ? 'separate' : 'qualified',
+    first_name: fn, phone: ph, email: em,
+    vehicle_type: answers.q1 && answers.q1.val,
+    work_type: answers.q2 && answers.q2.val,
+    vehicle_year: answers.q3 && answers.q3.val,
+    location: answers.q4 && answers.q4.val,
+    timeline: answers.q5 && answers.q5.val
+  });
+  showResult('success');
+});
+function showResult(type){
+  document.getElementById('quiz').querySelector('.quiz-header').style.display = 'none';
+  document.querySelector('.quiz-progress').style.display = 'none';
+  document.querySelectorAll('.quiz-question').forEach(function(q){q.style.display='none';});
+  if(type === 'success'){
+    document.getElementById('resultSuccess').classList.add('active');
+  } else {
+    document.getElementById('resultDisqualified').classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>
