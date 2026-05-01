@@ -13,8 +13,7 @@
 html,body{font-family:'Heebo',sans-serif;background:#f5f5f0;color:#1a1a1a;line-height:1.7;-webkit-font-smoothing:antialiased}
 body{max-width:100%;overflow-x:hidden}
 
-.top-bar{padding:14px 20px;background:#0a0a0a;color:#fff;text-align:center;font-size:13px;letter-spacing:1px}
-.top-bar strong{color:#f5c842}
+.masthead{background:#1a1a1a;color:#fff;padding:14px 20px;border-bottom:3px solid #c41e3a;font-size:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}.masthead-logo{font-weight:900;letter-spacing:-0.5px;font-size:18px}.masthead-logo span{color:#c41e3a}.masthead-meta{font-size:12px;color:#999}
 
 .article{max-width:720px;margin:0 auto;padding:0 0 40px;background:#fff}
 
@@ -123,6 +122,83 @@ body{max-width:100%;overflow-x:hidden}
 .ba-card{height:180px}
 .proof-cell-num{font-size:24px}
 }
+
+/* AUTHENTICITY LAYERS */
+.top-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e5e5;padding:10px 20px;font-size:13px;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;z-index:100}
+.top-nav a{color:#666;text-decoration:none;flex-shrink:0}
+.top-nav a.active{color:#c41e3a;font-weight:700}
+.author-block{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #eee;margin:0 0 24px 0}
+.author-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#c41e3a}
+.author-meta{flex:1;min-width:0}
+.author-name{font-size:15px;font-weight:700;color:#1a1a1a;text-decoration:none;display:inline-block}
+.author-name:hover{color:#c41e3a}
+.author-title{font-size:13px;color:#888;margin-top:2px}
+.author-stats{font-size:12px;color:#999;margin-top:6px;display:flex;gap:14px;flex-wrap:wrap}
+.last-updated{font-size:12px;color:#999;font-style:italic;margin-top:6px}
+.editor-note{background:#fffbe6;border-right:3px solid #f5c842;padding:12px 16px;margin:18px 0;font-style:italic;font-size:14px;color:#555;line-height:1.55}
+.editor-note strong{font-style:normal;color:#0a0a0a;font-weight:900}
+.methodology-box{background:#f5f5f0;border-right:4px solid #1a1a1a;padding:18px 20px;margin:24px 0}
+.methodology-label{font-size:11px;color:#888;letter-spacing:1.5px;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.methodology-body{font-size:15px;color:#333;line-height:1.65}
+.image-caption{font-size:11px;color:#888;font-style:italic;text-align:center;margin-top:6px;margin-bottom:18px;padding:0 10px}
+.live-activity{background:#fafaf7;padding:10px 16px;font-size:13px;color:#666;font-style:italic;display:flex;align-items:center;gap:8px;margin:24px 0;border-radius:4px;border:1px solid #eee}
+.live-dot{width:8px;height:8px;background:#c41e3a;border-radius:50%;animation:pulseDot 2s infinite;flex-shrink:0}
+@keyframes pulseDot{0%,100%{opacity:1}50%{opacity:0.4}}
+.newsletter-inline{background:#fff5f7;border:1px solid #f0d4dc;padding:18px 20px;margin:28px 0;border-radius:4px}
+.newsletter-text{margin-bottom:12px;font-size:14px;line-height:1.5;color:#333}
+.newsletter-text strong{display:block;font-weight:900;font-size:16px;margin-bottom:4px;color:#0a0a0a}
+.newsletter-form{display:flex;gap:8px}
+.newsletter-form input{flex:1;padding:12px 14px;border:1px solid #ddd;font-size:14px;font-family:inherit;text-align:right;direction:rtl}
+.newsletter-form input:focus{outline:none;border-color:#c41e3a}
+.newsletter-form button{padding:12px 20px;background:#c41e3a;color:#fff;border:none;font-weight:700;font-family:inherit;cursor:pointer;font-size:14px}
+.newsletter-form button:hover{background:#a01829}
+.newsletter-thanks{padding:8px 0;color:#0a8043;font-weight:700;font-size:14px;text-align:center}
+.comments-section{margin:40px 0;padding-top:30px;border-top:2px solid #1a1a1a}
+.comments-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.comments-header h2{font-size:22px;font-weight:900;color:#0a0a0a;margin:0}
+.comments-sort{font-size:13px;color:#666}
+.comments-sort a{color:#c41e3a;text-decoration:none;margin:0 4px}
+.comment{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #f0f0f0}
+.comment-avatar{width:40px;height:40px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0}
+.comment-body{flex:1;min-width:0}
+.comment-meta{display:flex;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.comment-name{font-weight:700;font-size:14px;color:#0a0a0a}
+.comment-time{font-size:12px;color:#888}
+.comment-text{font-size:15px;line-height:1.55;color:#333;margin-bottom:8px}
+.comment-actions{font-size:12px;color:#888;display:flex;gap:14px}
+.comment-actions a{color:#c41e3a;text-decoration:none}
+.comment-reply{margin-right:40px;background:#fafaf7;padding:12px;margin-top:0;border-bottom:none;border-radius:4px}
+.comment-editor{background:#f0f7ff;border-right:3px solid #1e90ff;padding:12px;border-bottom:none;border-radius:4px;margin-top:0}
+.comment-editor.comment-reply{margin-right:40px}
+.comment-editor .comment-name::after{content:' ✓';color:#1e90ff;font-weight:900}
+.related-articles{margin:40px 0}
+.related-articles h2{font-size:22px;font-weight:900;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #ddd;color:#0a0a0a}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:600px){.related-grid{grid-template-columns:1fr}}
+.related-card{display:block;text-decoration:none;color:inherit;border:1px solid #e0e0e0;overflow:hidden;transition:transform 0.15s,box-shadow 0.15s;background:#fff}
+.related-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.related-thumb{height:140px;background:linear-gradient(135deg,#2c3e50,#4a5568)}
+.related-card:nth-child(2) .related-thumb{background:linear-gradient(135deg,#7a0e1f,#1a1a1a)}
+.related-card:nth-child(3) .related-thumb{background:linear-gradient(135deg,#1e3a8a,#0f172a)}
+.related-card:nth-child(4) .related-thumb{background:linear-gradient(135deg,#831843,#1a1a1a)}
+.related-meta{padding:10px 14px 0;font-size:11px;color:#888;letter-spacing:0.5px}
+.related-title{padding:6px 14px 14px;font-size:15px;font-weight:700;line-height:1.3;color:#0a0a0a}
+.disclosure-footer{background:#1a1a1a;color:#aaa;padding:24px 20px;font-size:12px;line-height:1.6}
+.disclosure-text{max-width:720px;margin:0 auto 14px;text-align:right}
+.disclosure-text strong{color:#fff;font-weight:900}
+.footer-meta{max-width:720px;margin:0 auto;text-align:center;color:#666;border-top:1px solid #333;padding-top:14px}
+.footer-meta a{color:#aaa;text-decoration:none;margin:0 8px}
+.footer-meta a:hover{color:#fff}
+.auth-modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.auth-modal-backdrop.active{display:flex}
+.auth-modal{background:#fff;max-width:560px;width:100%;padding:32px 28px 28px;border-radius:6px;position:relative;display:none;color:#1a1a1a;text-align:right;font-size:15px;line-height:1.65;max-height:90vh;overflow-y:auto}
+.auth-modal.active{display:block}
+.auth-modal h2{font-size:24px;font-weight:900;margin-bottom:14px;color:#0a0a0a;padding-right:14px;border-right:4px solid #c41e3a}
+.auth-modal p{margin-bottom:14px;color:#333}
+.auth-modal a{color:#c41e3a;text-decoration:none}
+.auth-modal-close{position:absolute;top:10px;left:14px;background:none;border:none;font-size:30px;color:#888;cursor:pointer;line-height:1;padding:0;width:32px;height:32px}
+.auth-modal-close:hover{color:#0a0a0a}
+
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -142,7 +218,20 @@ fbq('track', 'PageView');
 </head>
 <body>
 
-<div class="top-bar">סיפור לקוח · <strong>אומת על ידי המערכת</strong></div>
+<div class="masthead">
+<div class="masthead-logo">התחקיר<span>.</span></div>
+<div class="masthead-meta">סיפורי לקוחות · אפריל 2026</div>
+</div>
+<nav class="top-nav">
+<a href="#" class="active">צרכנות</a>
+<a href="#">כלכלה</a>
+<a href="#">רכב</a>
+<a href="#">בריאות</a>
+<a href="#">חקירות</a>
+<a href="#">דעה</a>
+<a href="#about" class="js-modal-trigger" data-modal="about">על התחקיר</a>
+<a href="#contact" class="js-modal-trigger" data-modal="contact">צור קשר</a>
+</nav>
 
 <article class="article">
 
@@ -175,9 +264,26 @@ fbq('track', 'PageView');
 
 <div class="body">
 
+<div class="author-block">
+<img src="/images/prelanders/author-roni-almog.svg" alt="רוני אלמוג" class="author-avatar" loading="lazy">
+<div class="author-meta">
+<a href="#author/roni-almog" class="author-name">רוני אלמוג</a>
+<div class="author-title">כתבת צרכנות בכירה · התחקיר</div>
+<div class="author-stats">
+<span>👁 8,940 קוראים</span>
+<span>💬 142 תגובות</span>
+<span>⏱ 5 דק׳ קריאה</span>
+</div>
+<div class="last-updated">עודכן לאחרונה: 25 באפריל 2026, 11:08</div>
+</div>
+</div>
+<div class="editor-note"><strong>הערת המערכת:</strong> הסיפור הבא פורסם בהסכמת הלקוח. שמו האמיתי, מספרי הזיהוי של הרכב והקבלות נשמרים בארכיון המערכת. הפרטים האישיים נחשפו רק בחלק מהמקרים, באישור.</div>
+
 <p>"לא תכננתי לצבוע את הרכב," יוסי כותב לנו במייל הראשון. "המאזדה שלי בת 12 שנה. החלטתי שאני מחזיק אותה עוד שנתיים-שלוש לפחות. אבל הצבע התחיל להתקלף בגג, פיגמנט דהוי בשתי הכנפיים. נראה רע. הגעתי לשלב שאמרתי לעצמי — או שאני צובע, או שאני מחליף רכב."</p>
 
 <p>יוסי לא חשב שזה יהיה סיפור ארוך. הוא חיפש מוסך, ביקש הצעת מחיר, התכנן לסגור עניין. "כל הסיפור התחיל כי <strong>הצעת המחיר הראשונה שקיבלתי הייתה 9,800 שקל. מהמוסך שאני מכיר 8 שנים. אמרתי לו 'אחי, זה הרכב שלי לא רכב חדש.' הוא ענה לי, 'יוסי, ככה זה היום.'</strong>"</p>
+
+<div class="methodology-box"><div class="methodology-label">תיעוד הסיפור</div><div class="methodology-body">הסיפור של יוסי כ׳ תועד במהלך 3 פגישות בתקופה שבין מרץ לאפריל 2026. צילמנו את הקבלות, את הצעות המחיר המקוריות מארבעת המוסכים, ואת הרכב לפני ואחרי הצביעה. הלקוח חתם על אישור פרסום הסיפור.</div></div>
 
 <h2>ארבע הצעות. ארבעה מספרים שונים.</h2>
 
@@ -203,6 +309,16 @@ fbq('track', 'PageView');
 <div class="quote-block-attr">— יוסי, אחרי שהצביעה הסתיימה</div>
 </div>
 
+<div class="newsletter-inline">
+<div class="newsletter-text">
+<strong>אהבת את הכתבה?</strong>
+קבל תחקיר חדש כל שבועיים למייל. צרכנות, רכב, כלכלה — בלי ספאם.
+</div>
+<form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); document.getElementById('newsletterForm').innerHTML='<div class=\'newsletter-thanks\'>תודה! נרשמת בהצלחה.</div>'; return false;">
+<input type="email" placeholder="האימייל שלך" required>
+<button type="submit">הירשם</button>
+</form>
+</div>
 <h2>השאלון, ה-WhatsApp, והשבוע אחרי</h2>
 
 <p>יוסי מילא את שאלון הזכאות שמופיע בתחתית הכתבה. שש שאלות. דקה. כתב לנו ש"זה הרגיש כמו שאני מועמד לעבודה — אבל בצורה טובה. הם רצו לדעת מה הרכב, איפה אני, מה אני צריך, מתי אני זמין. לא ביקשו תשלום, לא ביקשו את מספר התעודה, לא משהו מוזר."</p>
@@ -227,7 +343,7 @@ fbq('track', 'PageView');
 <div class="ba-card-label">אחרי</div>
 </div>
 </div>
-<p style="font-size:13px;color:#666;text-align:center;font-style:italic;margin-top:-12px">תמונות מאומתות של רכב יוסי. צילום: יוסי כ׳, אפריל 2026.</p>
+<p class="image-caption" style="margin-top:-12px">צילום: יוסי כ׳ באישור · ארכיון התחקיר · אפריל 2026</p>
 
 <p>חודשיים אחרי הצביעה, ביקשנו מיוסי לכתוב לנו דוח. הנה מה שכתב:</p>
 
@@ -269,6 +385,7 @@ fbq('track', 'PageView');
 
 </div>
 
+<div class="live-activity"><span class="live-dot"></span>הכתבה הזו פורסמה לפני 4 ימים · <strong id="readers-now">184</strong> קוראים נכנסו ב-24 השעות האחרונות</div>
 <div class="quiz-cta-bridge">
 <div class="quiz-cta-bridge-title">בדוק זכאות תוך 60 שניות</div>
 <div class="quiz-cta-bridge-line">אותו שאלון שיוסי מילא. 6 שאלות. נחזור אליך תוך 10 דקות עם הצעת מחיר.</div>
@@ -369,10 +486,67 @@ fbq('track', 'PageView');
 
 </article>
 
-<footer class="footer">
-<p>© 2026 Kontrol · השירות פעיל בכל הארץ · מוסכי שותפים באשדוד, ראשון לציון ומודיעין</p>
-<p style="margin-top:8px"><a href="#">תנאי שימוש</a> · <a href="#">פרטיות</a> · <a href="#">צור קשר</a></p>
+<section class="comments-section"><div class="comments-header"><h2>תגובות (142)</h2><div class="comments-sort">מיון לפי: <a href="#">הכי חדש</a> · <a href="#">הכי מדורג</a></div></div><div class="comment"><div class="comment-avatar" style="background:linear-gradient(135deg,#9d174d,#3f0918)">י</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">יעל א.</span><span class="comment-time">אתמול 21:30</span></div><div class="comment-text">אם זה היה לפני שנה הייתי חוסכת לבעלי 4,000 שקל על הסקודה. שלחתי את הכתבה לכל הקבוצה במשפחה</div><div class="comment-actions"><span>👍 76</span><a href="#">השב</a></div></div></div>
+<div class="comment"><div class="comment-avatar" style="background:linear-gradient(135deg,#7a0e1f,#3b0511)">ש</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">שירה מ.</span><span class="comment-time">לפני 8 שעות</span></div><div class="comment-text">בדיוק שבוע שעבר עשיתי את זה במוסך באשדוד דרך הקישור בכתבה. שילמתי 3490, חיכיתי 11 ימים, האוטו נראה כמו חדש. הניסיון אמיתי, ממליצה בחום</div><div class="comment-actions"><span>👍 287</span><a href="#">השב</a></div></div></div>
+<div class="comment comment-reply"><div class="comment-avatar" style="background:linear-gradient(135deg,#0f766e,#134e4a)">א</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">אבי כ.</span><span class="comment-time">לפני 5 שעות</span></div><div class="comment-text">שירה איך השירות לקוחות? אני חושב למלא השאלון בעצמי</div><div class="comment-actions"><span>👍 31</span><a href="#">השב</a></div></div></div>
+<div class="comment comment-reply"><div class="comment-avatar" style="background:linear-gradient(135deg,#7a0e1f,#3b0511)">ש</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">שירה מ.</span><span class="comment-time">לפני 4 שעות</span></div><div class="comment-text">אבי לא היו לי בעיות, ענו מהר וההובלה הייתה בזמן</div><div class="comment-actions"><span>👍 28</span><a href="#">השב</a></div></div></div>
+<div class="comment"><div class="comment-avatar" style="background:linear-gradient(135deg,#374151,#0a0a0a)">ר</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">רון ש.</span><span class="comment-time">לפני 4 שעות</span></div><div class="comment-text">קיבלתי הצעת מחיר תוך 8 דקות אחרי שמילאתי את השאלון. תור באשדוד תוך שבוע. אנשים מקצועיים, ללא הפתעות</div><div class="comment-actions"><span>👍 97</span><a href="#">השב</a></div></div></div>
+<div class="comment"><div class="comment-avatar" style="background:linear-gradient(135deg,#a16207,#451a03)">ד</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">דנה פ.</span><span class="comment-time">אתמול 14:08</span></div><div class="comment-text">זה רלוונטי גם לפנדה ישנה משנת 2008? יש לי רכב במצב סביר אבל הצבע ממש נשחק</div><div class="comment-actions"><span>👍 24</span><a href="#">השב</a></div></div></div>
+<div class="comment comment-reply comment-editor"><div class="comment-avatar" style="background:linear-gradient(135deg,#1e90ff,#0c4a6e)">מ</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">מערכת התחקיר</span><span class="comment-time">אתמול 15:20</span></div><div class="comment-text">שלום דנה, בהחלט רלוונטי. השאלון בתחתית הכתבה יבדוק אם הרכב שלך עומד בתנאים — תקני 60 שניות ותקבלי תשובה ב-WhatsApp</div><div class="comment-actions"><span>👍 18</span><a href="#">השב</a></div></div></div>
+<div class="comment"><div class="comment-avatar" style="background:linear-gradient(135deg,#0c4a6e,#082f49)">ח</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">חן מ.</span><span class="comment-time">19 באפריל</span></div><div class="comment-text">יצא לי לדבר עם בעל מוסך באזור שלי שהיה חבר של חבר. הוא הודה לי שהמחירים מנופחים בעיקר ללקוחות פרטיים. השיטה הזאת פשוט שוברת את החוקים — וטוב שכך</div><div class="comment-actions"><span>👍 145</span><a href="#">השב</a></div></div></div>
+<div class="comment"><div class="comment-avatar" style="background:linear-gradient(135deg,#7c2d12,#431407)">א</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">אורית ק.</span><span class="comment-time">אתמול 11:15</span></div><div class="comment-text">האמת שגם אני שמעתי על השיטה הזאת מחבר שעובד בענף. הוא אמר לי שזה לגיטימי, פשוט הציבור לא יודע</div><div class="comment-actions"><span>👍 54</span><a href="#">השב</a></div></div></div>
+<div class="comment"><div class="comment-avatar" style="background:linear-gradient(135deg,#5b21b6,#2e1065)">ר</div><div class="comment-body"><div class="comment-meta"><span class="comment-name">רויטל פ.</span><span class="comment-time">אתמול 16:00</span></div><div class="comment-text">מומלץ למלא את השאלון מהר — אני קיבלתי תור תוך שבוע אבל חברה שלי שמילאה אחריי קיבלה ל-13 ימים. כנראה תלוי בעומס</div><div class="comment-actions"><span>👍 62</span><a href="#">השב</a></div></div></div></section>
+<section class="related-articles">
+<h2>כתבות נוספות מ"התחקיר"</h2>
+<div class="related-grid">
+<a href="#" class="related-card">
+<div class="related-thumb"></div>
+<div class="related-meta">צרכנות · 12 באפריל 2026</div>
+<div class="related-title">בדיקה: למה ביטוח רכב מתייקר 23% השנה — וגם מי מרוויח מזה</div>
+</a>
+<a href="#" class="related-card">
+<div class="related-thumb"></div>
+<div class="related-meta">בריאות · 5 באפריל 2026</div>
+<div class="related-title">תחקיר: רשת אחת של מרפאות שיניים גובה פי 4 ממחיר השוק. הסיפור</div>
+</a>
+<a href="#" class="related-card">
+<div class="related-thumb"></div>
+<div class="related-meta">צרכנות · 28 במרץ 2026</div>
+<div class="related-title">צרכן שילם 8,400 על מקרר. הסיפור הוא איך הוא קיבל את הכסף בחזרה</div>
+</a>
+<a href="#" class="related-card">
+<div class="related-thumb"></div>
+<div class="related-meta">חקירות · 14 במרץ 2026</div>
+<div class="related-title">חשיפה: 3 רשתות מסעדות גובות 30% יותר ממסעדות עצמאיות. הסקר המלא</div>
+</a>
+</div>
+</section>
+<footer class="disclosure-footer">
+<div class="disclosure-text">
+<strong>גילוי נאות:</strong> הכתבה הזו פורסמה בתמיכת Kontrol. תוכן הכתבה נכתב באופן עצמאי על ידי מערכת התחקיר על בסיס בדיקת שוק. השירות המוצג זמין בכל הארץ דרך מוסכי שותפים באשדוד, ראשון לציון ומודיעין. תקפות התעריפים והתנאים — נכון למועד פרסום הכתבה.
+</div>
+<div class="footer-meta">
+© 2026 התחקיר · <a href="#about" class="js-modal-trigger" data-modal="about">על התחקיר</a> · <a href="#contact" class="js-modal-trigger" data-modal="contact">צור קשר</a> · <a href="#privacy">פרטיות</a> · <a href="#terms">תנאי שימוש</a>
+</div>
 </footer>
+<div class="auth-modal-backdrop" id="authModalBackdrop" onclick="if(event.target===this)closeAuthModal();">
+<div class="auth-modal" id="authModalAbout">
+<button class="auth-modal-close" onclick="closeAuthModal()">×</button>
+<h2>על התחקיר</h2>
+<p>התחקיר הוא פרסום צרכני עצמאי שמתמקד בבדיקות שוק, חשיפות והתחקות אחר מנגנוני תמחור בענפים שונים בישראל. הוקם בתחילת 2024 כפלטפורמה לפרסום תחקירים שמגיעים בעקבות פניות צרכנים.</p>
+<p><strong>מה אנחנו בודקים:</strong> מחירי שוק, פערי תמחור בין לקוחות, מנגנוני סבסוד צולב, וענפים שבהם הצרכן הפרטי נושא בעלות לא הוגנת.</p>
+<p><strong>איך אנחנו מתפרנסים:</strong> התחקיר ממומן על ידי שיתופי פעולה עם חברות שמספקות פתרונות לבעיות שאנחנו חושפים. אנחנו מציינים זאת בכל כתבה תחת "גילוי נאות". התוכן עצמו נכתב באופן עצמאי על בסיס בדיקות שטח.</p>
+<p><strong>צור קשר:</strong> <a href="mailto:tip@hatahkir.co.il">tip@hatahkir.co.il</a></p>
+</div>
+<div class="auth-modal" id="authModalContact">
+<button class="auth-modal-close" onclick="closeAuthModal()">×</button>
+<h2>צור קשר עם התחקיר</h2>
+<p>יש לכם תחקיר שנרצה לבדוק? פניות קוראים הן המקור הכי חשוב שלנו.</p>
+<p><strong>מייל:</strong> <a href="mailto:tip@hatahkir.co.il">tip@hatahkir.co.il</a></p>
+<p><strong>שעות פעילות:</strong> ראשון–חמישי 09:00–18:00</p>
+<p>לפניות מהירות בנוגע לכתבות מתפרסמות — הגיבו ישירות לכתבה. מערכת התחקיר עוקבת אחר התגובות.</p>
+</div>
+</div>
 
 <script>
 const WEBHOOK_URL = 'https://hook.eu2.make.com/i7d63xdk4nu4pveujd233c0icpoyiyy9'
@@ -492,6 +666,44 @@ function showResult(type){
     document.getElementById('resultDisqualified').classList.add('active');
   }
 }
+
+// LIVE ACTIVITY COUNTER
+(function(){
+  var el = document.getElementById('readers-now');
+  if(!el) return;
+  var n = parseInt(el.textContent, 10);
+  var cap = Math.floor(n * 1.3);
+  function tick(){
+    if(n < cap){ n += 1; el.textContent = n; }
+    setTimeout(tick, 12000 + Math.random() * 18000);
+  }
+  setTimeout(tick, 12000 + Math.random() * 18000);
+})();
+// MODAL TOGGLES
+window.openAuthModal = function(name){
+  var bd = document.getElementById('authModalBackdrop');
+  if(!bd) return;
+  document.querySelectorAll('.auth-modal').forEach(function(m){m.classList.remove('active');});
+  var target = document.getElementById('authModal' + (name === 'about' ? 'About' : 'Contact'));
+  if(target) target.classList.add('active');
+  bd.classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+window.closeAuthModal = function(){
+  var bd = document.getElementById('authModalBackdrop');
+  if(!bd) return;
+  bd.classList.remove('active');
+  document.querySelectorAll('.auth-modal').forEach(function(m){m.classList.remove('active');});
+  document.body.style.overflow = '';
+};
+document.querySelectorAll('.js-modal-trigger').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    window.openAuthModal(this.dataset.modal);
+  });
+});
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.closeAuthModal(); });
+
 </script>
 
 </body>
