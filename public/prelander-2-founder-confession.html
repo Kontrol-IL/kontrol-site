@@ -407,6 +407,7 @@ function _exit(){
 window.addEventListener('beforeunload', _exit);
 window.addEventListener('pagehide', _exit);
 sendWebhook({event:'page_view'});
+if (typeof fbq !== 'undefined') fbq('trackCustom', 'QuizStart');
 
 // Quiz
 var answers = {};
@@ -426,13 +427,20 @@ document.querySelectorAll('.quiz-option').forEach(function(btn){
     var flag = this.dataset.flag;
     answers['q'+q] = {val:val, flag:flag};
     sendWebhook({event:'quiz_answer', question:q, answer:val, flag:flag||''});
+    if (typeof fbq !== 'undefined') fbq('trackCustom', 'QuizAnswer', {question: parseInt(q), answer: val});
     if(flag === 'disqualify'){
       sendWebhook({event:'disqualified', question:q, answer:val});
+      if (typeof fbq !== 'undefined') fbq('trackCustom', 'Disqualified', {question: parseInt(q), answer: val});
       showResult('disqualified');
       return;
     }
     if(flag === 'separate'){ answers.routeTo = 'separate'; }
-    setTimeout(function(){ if(parseInt(q) < 6){ go(parseInt(q)+1); } }, 200);
+    setTimeout(function(){
+      if(parseInt(q) < 6){
+        if(parseInt(q) === 5 && typeof fbq !== 'undefined') fbq('trackCustom', 'QuizComplete');
+        go(parseInt(q)+1);
+      }
+    }, 200);
   });
 });
 document.getElementById('submit').addEventListener('click', function(e){
@@ -454,6 +462,7 @@ document.getElementById('submit').addEventListener('click', function(e){
     location: answers.q4 && answers.q4.val,
     timeline: answers.q5 && answers.q5.val
   });
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead');
   showResult('success');
 });
 function showResult(type){
