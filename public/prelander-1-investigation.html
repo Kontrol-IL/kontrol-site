@@ -209,6 +209,13 @@ body{max-width:100%;overflow-x:hidden}
 .auth-modal-close{position:absolute;top:10px;left:14px;background:none;border:none;font-size:30px;color:#888;cursor:pointer;line-height:1;padding:0;width:32px;height:32px}
 .auth-modal-close:hover{color:#0a0a0a}
 
+
+/* Scroll cue arrow */
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 0 24px;text-decoration:none;color:#c41e3a;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:0.3px}
+.scroll-cue:hover{color:#a01829}
+.scroll-cue-label{font-size:14px}
+.scroll-cue-arrow{width:34px;height:42px;animation:scrollCueBounce 1.6s ease-in-out infinite;display:block}
+@keyframes scrollCueBounce{0%,100%{transform:translateY(0);opacity:0.85}50%{transform:translateY(10px);opacity:1}}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -341,6 +348,14 @@ fbq('track', 'PageView');
 <strong>שאלון הזכאות</strong>
 6 שאלות. 60 שניות. תדע אם הרכב שלך עומד בתנאי תוכנית ה-3,490.
 </div>
+<a href="#quiz" class="scroll-cue" onclick="event.preventDefault(); var q=document.getElementById('quiz'); if(q) q.scrollIntoView({behavior:'smooth',block:'start'}); return false;" aria-label="גלול לשאלון">
+<span class="scroll-cue-label">מלא את השאלון כאן</span>
+<svg class="scroll-cue-arrow" viewBox="0 0 32 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<polyline points="6 14 16 24 26 14"/>
+<polyline points="6 24 16 34 26 24"/>
+</svg>
+</a>
+
 
 <div class="quiz" id="quiz">
 <div class="quiz-header">
