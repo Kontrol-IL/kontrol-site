@@ -45,9 +45,7 @@ body{max-width:100%;overflow-x:hidden}
 .body em{font-style:italic;color:#444}
 
 .before-after{margin:24px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.ba-card{position:relative;height:200px;background:linear-gradient(135deg,#888,#444);display:flex;align-items:center;justify-content:center;color:#fff}
-.ba-card.before{background:linear-gradient(135deg,#666,#333)}
-.ba-card.after{background:linear-gradient(135deg,#1a1a1a,#0a0a0a)}
+.ba-card{position:relative;height:200px;background:#1a1a1a;overflow:hidden}.ba-card-photo{width:100%;height:100%;object-fit:cover;display:block}
 .ba-card-label{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.7);padding:4px 10px;font-size:11px;font-weight:900;letter-spacing:1px}
 .ba-card.after .ba-card-label{background:#f5c842;color:#0a0a0a}
 .ba-card-icon{font-size:48px;opacity:0.5}
@@ -221,12 +219,12 @@ fbq('track', 'PageView');
 
 <div class="before-after">
 <div class="ba-card before">
+<img src="/images/prelanders/p3-mazda-before.webp" alt="המאזדה של יוסי לפני הצביעה — צבע מתקלף, פיגמנט דהוי" class="ba-card-photo" loading="lazy">
 <div class="ba-card-label">לפני</div>
-<div class="ba-card-icon">🚗</div>
 </div>
 <div class="ba-card after">
+<img src="/images/prelanders/p3-mazda-after.webp" alt="המאזדה של יוסי אחרי הצביעה — גימור חדש מבריק" class="ba-card-photo" loading="lazy">
 <div class="ba-card-label">אחרי</div>
-<div class="ba-card-icon">🚙</div>
 </div>
 </div>
 <p style="font-size:13px;color:#666;text-align:center;font-style:italic;margin-top:-12px">תמונות מאומתות של רכב יוסי. צילום: יוסי כ׳, אפריל 2026.</p>
