@@ -147,16 +147,18 @@ export function MotionFooter() {
 
             {/* Secondary pills */}
             <div className="mf-secondary">
-              <MagneticButton href="#" className="mf-pill mf-pill--sm">מדיניות פרטיות</MagneticButton>
-              <MagneticButton href="#" className="mf-pill mf-pill--sm">תנאי שימוש</MagneticButton>
-              <MagneticButton href="#" className="mf-pill mf-pill--sm">תמיכה</MagneticButton>
+              <MagneticButton href="/faq" className="mf-pill mf-pill--sm">שאלות ותשובות</MagneticButton>
+              <MagneticButton href="/about" className="mf-pill mf-pill--sm">אודות Kontrol</MagneticButton>
+              <MagneticButton href="/contact" className="mf-pill mf-pill--sm">צור קשר</MagneticButton>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="mf-bottom">
-          <span className="mf-copyright">&copy; Kontrol. כל הזכויות שמורות.</span>
+          <span className="mf-copyright">
+            &copy; Kontrol — מותג של לוחמים בצבע בע&quot;מ ח.פ. {"{{COMPANY_NUMBER}}"}. כל הזכויות שמורות.
+          </span>
         </div>
       </footer>
     </div>

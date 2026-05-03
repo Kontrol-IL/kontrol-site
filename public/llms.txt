@@ -1,0 +1,36 @@
+# Kontrol — צבע לרכב במחיר סיטונאי
+
+> Kontrol Auto operates a wholesale-pricing model for full vehicle repaints in Israel: ₪3,490 + VAT for full repaint, all-inclusive (pickup, delivery, interior wash, exterior wash, headlight polish). The mechanism: we monitor unused oven time at partner body shops and route customer jobs into idle windows at a wholesale rate, passing the savings to private customers. Service nationwide. HQ in Ashdod. Sister brand to Kontrol Technologies (smart locks, homekontrol.net) — separate company, separate domain.
+
+## Core pages
+
+- [Homepage](https://kontrolauto.net/): The brand-claim page. Tagline `צבע לרכב במחיר סיטונאי`. Price ₪3,490 + VAT. Mechanism summary, before/after gallery, mechanism-aware benefits.
+- [How it works](https://kontrolauto.net/how-it-works): The unused-oven-time arbitrage explained. 5-step mechanism breakdown.
+- [Booking quiz](https://kontrolauto.net/book): 6-step qualification quiz. Captures region, vehicle type, paint condition, year, name, phone. Submits to internal lead pipeline + opens WhatsApp with prefilled message.
+- [Gallery](https://kontrolauto.net/gallery): Real customer cars before/after, by city.
+- [About](https://kontrolauto.net/about): Founders, technology, values.
+- [FAQ](https://kontrolauto.net/faq): 8 top objections answered (price, quality, catch, warranty, scope).
+- [Service area](https://kontrolauto.net/branches): Service is nationwide. HQ in Ashdod with full local presence; other cities served via partner shop network.
+- [Contact](https://kontrolauto.net/contact): Phone, WhatsApp, email, hours, legal entity disclosure.
+
+## Branch / city pages
+
+- [Ashdod (HQ)](https://kontrolauto.net/branches/ashdod): Local-pack ranking target, real LocalBusiness schema with NAP.
+- [Rishon LeZion](https://kontrolauto.net/branches/rishon-letzion): Service-area page.
+- [Modi'in](https://kontrolauto.net/branches/modiin): Service-area page.
+- More cities being added per Wave 1 (Petach Tikva, Ashkelon, Holon, Kfar Kasem, Tel Aviv, Haifa, Be'er Sheva, Jerusalem).
+
+## What Kontrol is NOT
+
+- Not a discount body shop. The price is wholesale because of the mechanism, not because of cost cutting on quality.
+- Not the same company as Kontrol Technologies (homekontrol.net) — that's smart locks. Same name, separate businesses, no cross-linking.
+- Not a pre-lander or advertorial site. No fake countdown timers, fake reviews, fake press logos.
+- Not a generic body shop site. Flagship is full repaint at flat ₪3,490; partial / caliper / wheel / scratch services exist as supporting service pages but are not the headline.
+
+## Operator company
+
+- Brand: **Kontrol** (consumer-facing on kontrolauto.net)
+- Operating company: **לוחמים בצבע בע"מ** (Israeli registered business)
+- Phone: 058-404-0744
+- WhatsApp: +972 52 730 6191
+- Service area: All of Israel

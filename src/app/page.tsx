@@ -1,30 +1,30 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
-import { Typewriter } from "@/components/ui/typewriter";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { Nav } from "@/components/ui/nav";
 import HeroBackground from "@/components/ui/hero-background";
 import SectionBackground from "@/components/ui/section-background";
 import HeroPrice from "@/components/ui/hero-price";
 import { TypeOnScroll } from "@/components/ui/type-on-scroll";
 import ScrollLine from "@/components/ui/scroll-line";
 import { MotionFooter } from "@/components/ui/motion-footer";
+import { LocalBusinessSchema } from "@/components/schema/LocalBusiness";
+import { WhatsIncluded } from "@/components/home/whats-included";
+import { MechanismSteps } from "@/components/home/mechanism-steps";
+import { TrustStrip } from "@/components/home/trust-strip";
+import { ObjectionHandler } from "@/components/home/objection-handler";
+import { HomepageFAQ } from "@/components/home/homepage-faq";
+import { FinalCta } from "@/components/home/final-cta";
 
-/* ── SERVICES DATA ── */
-const services = [
-  { name: "צביעה מלאה של הרכב", img: "/images/BETTER/full-painting.png" },
-  { name: "צביעה פרטנית", img: "/images/BETTER/detailed-painting.png" },
-  { name: "צביעת קליפרים", img: "/images/BETTER/caliper-painting.png" },
-  { name: "צביעת חישוקים", img: "/images/BETTER/wheel-painting.png" },
-  { name: "צביעה מקומית", img: "/images/BETTER/local-painting.png" },
+/* ── BEFORE/AFTER CARS (real customers, nationwide) ── */
+const cars = [
+  { name: "מאזדה 3 · 2018 · אשדוד", img: "/images/BETTER/full-painting.png" },
+  { name: "טויוטה קורולה · 2015 · פתח תקווה", img: "/images/BETTER/detailed-painting.png" },
+  { name: "יונדאי i30 · 2019 · חיפה", img: "/images/BETTER/caliper-painting.png" },
+  { name: "קיה ספורטאז' · 2020 · ראשון לציון", img: "/images/BETTER/wheel-painting.png" },
+  { name: "סובארו XV · 2016 · ירושלים", img: "/images/BETTER/local-painting.png" },
 ];
-
-const benefits = [
-  { title: "התאמת צבע 100%", text: "בחירת הפלטה המדויקת על ידי המומחים שלנו מבטלת כל הבדל בהשוואה לציפוי הקיים של הרכב." },
-  { title: "שירות מועדון מס׳ 1", text: "עשרות יצרני צבע מוסמכים סומכים עלינו עם הרכבים שלהם. אנחנו גם מוכרים כמתקן שירות מותג." },
-  { title: "בדיוק לפי התקציב שלך", text: "אנו מציעים מספר אפשרויות מחיר גם לאותו סוג עבודה, אז אל תדאגו לגבי העלויות." },
-  { title: "חברים לא יראו הבדל", text: "על פי הסטטיסטיקה, ב-8 מתוך 10 מקרים הלקוחות עצמם לא רואים שינויים בגוף הרכב לאחר התיקון." },
-];
-
 
 /* ── HOOKS ── */
 
@@ -110,54 +110,25 @@ const mirrorStyle = { transform: "scaleX(-1)" } as const;
 
 /* ── PAGE ── */
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const { heroRef, cardRef, headerRef } = useHeroScroll();
-  const aboutFlare = useMouseFlare("75%", "50%");
-  const benefitsFlare = useMouseFlare("70%", "40%");
-
-  const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const galleryFlare = useMouseFlare("75%", "50%");
 
   return (
     <>
-      {/* NAV */}
-      <nav className="nav">
-        <div className="container">
-          <a href="#" className="nav-logo"><img src="/kontrol-white.png" alt="Kontrol" style={{ height: "24px", width: "auto" }} /></a>
-          <ul className="nav-links">
-            <li><a href="#">ראשי</a></li>
-            <li><a href="#">שירותים</a></li>
-            <li><a href="#">חנות</a></li>
-            <li><a href="#">אודות</a></li>
-            <li><a href="#">צור קשר</a></li>
-          </ul>
-          <div className="nav-right">
-            <a href="#" className="nav-cb">התקשרו אלינו</a>
-            <button
-              className="nav-hamburger"
-              aria-label="תפריט"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <span /><span /><span />
-            </button>
-          </div>
-        </div>
-      </nav>
-      <div className={`mobile-menu${menuOpen ? " active" : ""}`}>
-        <a href="#" onClick={closeMenu}>ראשי</a>
-        <a href="#" onClick={closeMenu}>שירותים</a>
-        <a href="#" onClick={closeMenu}>בלוג</a>
-        <a href="#" onClick={closeMenu}>אודות</a>
-        <a href="#" onClick={closeMenu}>צור קשר</a>
-      </div>
+      {/* JSON-LD */}
+      <LocalBusinessSchema pageUrl="/" />
 
-      {/* HERO */}
+      {/* NAV */}
+      <Nav />
+
+      {/* §1 — HERO (existing 3D perspective + video card + typewriter price) */}
       <section className="hero" ref={heroRef}>
         <HeroBackground />
         <div className="hero-glow" />
         <div className="hero-perspective">
           <div className="hero-header" ref={headerRef}>
-            <h1>הפכו את הצבע</h1>
-            <div className="hero-title-big">למקסימום</div>
+            <h1>צבע לרכב</h1>
+            <div className="hero-title-big">במחיר סיטונאי</div>
           </div>
           <div className="hero-card" ref={cardRef}>
             <div className="hero-card-inner">
@@ -175,87 +146,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MAIN CONTENT (single shared background) */}
-      <div className="relative overflow-hidden" ref={aboutFlare.sectionRef as React.RefObject<HTMLDivElement>}>
+      {/* §2 — WHAT'S INCLUDED */}
+      <WhatsIncluded />
+
+      {/* §3 — MECHANISM 3-STEP EXPLAINER */}
+      <MechanismSteps />
+
+      {/* §4 — TRUST STRIP (animated counters) */}
+      <TrustStrip />
+
+      {/* §5 — BEFORE/AFTER GALLERY
+          (existing services-grid layout — preserves SectionBackground, ScrollLine,
+          mouse-flare, TypeOnScroll, scard-img treatments) */}
+      <div className="relative overflow-hidden" ref={galleryFlare.sectionRef as React.RefObject<HTMLDivElement>}>
         <SectionBackground />
         <ScrollLine />
-        <div className="about-flare" ref={aboutFlare.flareRef} />
+        <div className="about-flare" ref={galleryFlare.flareRef} />
 
-        {/* ABOUT */}
-        <section className="about" style={{ overflow: "visible" }}>
-          <div className="container" style={{ position: "relative", zIndex: 1 }}>
-            <div className="about-grid">
-              <h2>
-                {"נמאס לנו מעבודות 🎨 "}
-                <Typewriter
-                  text={[
-                    "שהיו גרועות.",
-                    "שהיו יקרות.",
-                    "שלא היה אכפת להם.",
-                  ]}
-                  speed={70}
-                  className="text-[var(--accent)]"
-                  waitTime={1500}
-                  deleteSpeed={40}
-                  cursorChar="_"
-                />
-              </h2>
-              <div className="about-text">
-                <p>המאמצים שלנו מתמקדים בחידוד מיומנויות מתמיד ובשיפור טכניקות תיקון וצביעת הרכב. אנו יכולים להבטיח בביטחון ללקוחות איכות עבודה, הן מבחינת המקצועיות והן מבחינת המחירים.</p>
-                <p>תקנים גבוהים של איכות אפשרו לנו לקבל תעודות למסחר בתיקוני רכב, העומדים בסטנדרטים של מצוינות, וכבונוס ללקוחות — חוויה בלתי תלויה.</p>
-                <a href="#" className="btn btn--blue">אודות החברה</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SERVICES */}
         <section className="services">
           <div className="container" style={{ position: "relative", zIndex: 1 }}>
-            <TypeOnScroll tag="h2" className="services-title" speed={30} text="סוגי צביעת רכב" />
+            <TypeOnScroll
+              tag="h2"
+              className="services-title"
+              speed={30}
+              text="רכבים שצבענו לאחרונה"
+            />
             <div className="services-grid">
-              {services.map((s) => (
-                <div className="scard" key={s.name}>
-                  <TypeOnScroll tag="span" className="scard-name" speed={25} text={s.name} />
-                  <a href="#" className="scard-link">למידע נוסף</a>
+              {cars.map((c) => (
+                <div className="scard" key={c.name}>
+                  <TypeOnScroll tag="span" className="scard-name" speed={25} text={c.name} />
+                  <Link href="/gallery" className="scard-link">לפני ואחרי</Link>
                   <div className="scard-img">
-                    <img src={s.img} alt={s.name} style={mirrorStyle} />
+                    <img src={c.img} alt={c.name} style={mirrorStyle} />
                   </div>
                 </div>
               ))}
               <div className="scard--cta">
-                <h3>השאירו פנייה לייעוץ חינם</h3>
-                <a href="#" className="btn btn--white">התקשרו אלינו</a>
+                <h3>רוצים שזה יהיה הרכב שלכם הבא?</h3>
+                <Link href="/book" className="btn btn--white">התחילו את השאלון</Link>
               </div>
             </div>
           </div>
         </section>
-
-        {/* BENEFITS */}
-        <div className="benefits-cta-wrapper" ref={benefitsFlare.sectionRef as React.RefObject<HTMLDivElement>}>
-          <div className="benefits-cta-flare" ref={benefitsFlare.flareRef} />
-          <section className="benefits">
-            <div className="container" style={{ position: "relative", zIndex: 1 }}>
-              <div className="benefits-layout">
-                <div className="benefits-intro">
-                  <TypeOnScroll tag="h2" speed={30} text="אנחנו יכולים מה שאחרים לא!" />
-                  <TypeOnScroll tag="p" speed={12} text="אנו מטפלים בכל בעיה ומבטיחים יעילות מרבית עבורכם. אנו שואפים להפוך את השירות לנוח ונגיש ללקוח." />
-                </div>
-                <div className="benefits-cards">
-                  {benefits.map((b) => (
-                    <div className="bcard" key={b.title}>
-                      <TypeOnScroll tag="h3" speed={25} text={b.title} />
-                      <TypeOnScroll tag="p" speed={10} text={b.text} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
       </div>
 
-      {/* MOTION FOOTER */}
+      {/* §6 — WHY THIS ISN'T A SCAM (objection handler with analogy) */}
+      <ObjectionHandler />
+
+      {/* §7 — HOMEPAGE FAQ (top 6 from /faq + FAQPage schema) */}
+      <HomepageFAQ />
+
+      {/* §8 — FINAL CTA */}
+      <FinalCta />
+
+      {/* §9 — MOTION FOOTER (existing gsap magnetic pills + diagonal marquee + giant text) */}
       <MotionFooter />
     </>
   );

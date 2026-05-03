@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const LINE1 = "במחיר של";
-const LINE2 = "רק 2990₪";
+const LINE2 = "רק ₪3,490";
 const COMBINED = LINE1 + LINE2;
 const SPEED = 70;
 
@@ -35,8 +35,8 @@ export default function HeroPrice() {
   const displayedLine1 = LINE1.slice(0, line1End);
   const displayedLine2 = LINE2.slice(0, line2End);
 
-  // Find "2990₪" portion within line2 for underline
-  const priceStart = LINE2.indexOf("2990");
+  // Find "₪3,490" portion within line2 for underline
+  const priceStart = LINE2.indexOf("₪3,490");
   const priceInLine2 = line2End > priceStart ? LINE2.slice(priceStart, line2End) : "";
 
   return (
@@ -102,7 +102,27 @@ export default function HeroPrice() {
         </div>
       )}
 
+      {/* + מע"מ subtitle, fades in after underline draws */}
+      {showUnderline && (
+        <div
+          style={{
+            fontSize: "clamp(14px, 1.4vw, 18px)",
+            fontWeight: 400,
+            opacity: 0.7,
+            marginTop: "0.6em",
+            letterSpacing: "0.04em",
+            animation: "fade-in-up 0.5s ease-out forwards",
+          }}
+        >
+          + מע&quot;מ · בכל הארץ · HQ באשדוד
+        </div>
+      )}
+
       <style>{`
+        @keyframes fade-in-up {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 0.7; transform: translateY(0); }
+        }
         @keyframes draw-underline {
           to { stroke-dashoffset: 0; }
         }

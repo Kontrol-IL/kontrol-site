@@ -589,12 +589,18 @@ document.querySelectorAll('.quiz-option').forEach(function(btn){
     }, 200);
   });
 });
+var _submitted = false;
 document.getElementById('submit').addEventListener('click', function(e){
   e.preventDefault();
+  if(_submitted) return;
   var fn = document.getElementById('fname').value.trim();
   var ph = document.getElementById('phone').value.trim();
   var em = document.getElementById('email').value.trim();
   if(!fn || !ph){ alert('שם וטלפון הם חובה'); return; }
+  _submitted = true;
+  this.disabled = true;
+  this.style.opacity = '0.5';
+  this.style.pointerEvents = 'none';
   answers.firstName = fn;
   answers.phone = ph;
   answers.email = em;
