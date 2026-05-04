@@ -9,15 +9,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gallery" },
 };
 
-const PROJECTS = [
-  { make: "מאזדה 3", year: 2018, city: "אשדוד", days: 4, note: "החזרת ברק לצבע שדהה", img: "/images/BETTER/full-painting.png" },
-  { make: "טויוטה קורולה", year: 2015, city: "ראשון לציון", days: 3, note: "צביעה בגוון מקורי", img: "/images/BETTER/detailed-painting.png" },
-  { make: "יונדאי i30", year: 2019, city: "מודיעין", days: 5, note: "החלפת גוון לפני מכירה", img: "/images/BETTER/caliper-painting.png" },
-  { make: "סקודה אוקטביה", year: 2017, city: "אשדוד", days: 4, note: "תיקון נזק שמש מקיף", img: "/images/BETTER/wheel-painting.png" },
-  { make: "קיה ספורטאז'", year: 2020, city: "ראשון לציון", days: 4, note: "צביעה מלאה + פוליש פנסים", img: "/images/BETTER/local-painting.png" },
-  { make: "סובארו XV", year: 2016, city: "מודיעין", days: 5, note: "החלפת גוון משחור לאפור", img: "/images/BETTER/full-painting.png" },
-];
-
 const TESTIMONIALS = [
   { name: "{{CUSTOMER_NAME_1}}", city: "אשדוד", quote: "חיפשתי הצעות מחיר וכולם נתנו לי בין ₪9,000 ל־₪14,000. הסתכלתי על Kontrol בחשד. הרכב חזר אחרי 4 ימים נראה כמו חדש. עדיין לא מאמין." },
   { name: "{{CUSTOMER_NAME_2}}", city: "ראשון לציון", quote: "מה שמכר לי זה ההסבר איך זה עובד — מילוי שעות תנור פנויות. נשמע הגיוני, וקיבלתי איכות של מוסך גדול." },
@@ -32,69 +23,6 @@ export default function GalleryPage() {
         { name: "גלריה" },
       ]}
     >
-      <SubSection
-        kicker="לפני ואחרי"
-        title="רכבים שצבענו לאחרונה."
-        intro={'כל רכב כאן הוא לקוח אמיתי, באזור השירות שלנו, במחיר ₪3,490 + מע"מ. אין כאן stock photos.'}
-      />
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 20,
-          marginBottom: 80,
-        }}
-      >
-        {PROJECTS.map((p, i) => (
-          <article
-            key={i}
-            style={{
-              background: "var(--bg-card)",
-              borderRadius: 16,
-              overflow: "hidden",
-              boxShadow:
-                "0 0 20px rgba(57,101,200,0.10), 0 4px 12px rgba(0,0,0,0.3)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}
-          >
-            <div
-              style={{
-                aspectRatio: "4 / 3",
-                background:
-                  "linear-gradient(135deg, rgba(57,101,200,0.12), rgba(99,102,241,0.06))",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                overflow: "hidden",
-              }}
-            >
-              <img
-                src={p.img}
-                alt={`${p.make} ${p.year}`}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  transform: "scaleX(-1)",
-                }}
-              />
-            </div>
-            <div style={{ padding: 22 }}>
-              <h3 style={{ fontSize: 19, fontWeight: 700, marginBottom: 6 }}>
-                {p.make} · {p.year}
-              </h3>
-              <p style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 12 }}>
-                {p.city} · {p.days} ימי עבודה
-              </p>
-              <p style={{ fontSize: 15, color: "rgba(255,255,255,0.88)", lineHeight: 1.6 }}>
-                {p.note}
-              </p>
-            </div>
-          </article>
-        ))}
-      </div>
-
       <SubSection title="מה לקוחות אמרו אחרי המסירה.">
         <div
           style={{

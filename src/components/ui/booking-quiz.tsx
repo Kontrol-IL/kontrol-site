@@ -149,18 +149,13 @@ export function BookingQuiz() {
       qualification,
       ...utm,
     };
-    try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("Lead submit failed: " + res.status);
-    } catch (e) {
-      setSubmitErr((e as Error).message);
-      setSubmitting(false);
-      return;
-    }
+
+    // Build WA URL up-front and open the tab synchronously while we still
+    // have the click's user-gesture context. After `await fetch`, Safari /
+    // mobile browsers consider the gesture "consumed" and silently block
+    // window.open. We fall back to same-tab navigation if the popup is blocked.
+    let waTab: Window | null = null;
+    let waUrl = "";
     if (qualification === "qualified") {
       const msg =
         `היי, מילאתי את השאלון באתר.\n` +
@@ -170,8 +165,32 @@ export function BookingQuiz() {
         `רכב: ${VEHICLE_LABELS[a.vehicleType]}\n` +
         `שנה: ${YEAR_LABELS[a.yearBucket]}\n` +
         `מצב: ${PAINT_LABELS[a.paintCondition]}`;
-      const wa = `https://wa.me/972527306191?text=${encodeURIComponent(msg)}`;
-      window.open(wa, "_blank", "noopener,noreferrer");
+      waUrl = `https://wa.me/972527306191?text=${encodeURIComponent(msg)}`;
+      waTab = window.open(waUrl, "_blank", "noopener,noreferrer");
+    }
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      });
+      if (!res.ok) throw new Error("Lead submit failed: " + res.status);
+    } catch (e) {
+      setSubmitErr((e as Error).message);
+      setSubmitting(false);
+      if (waTab && !waTab.closed) waTab.close();
+      return;
+    }
+
+    if (qualification === "qualified") {
+      if (!waTab || waTab.closed) {
+        // Popup blocked or closed before save completed — fall back to same-tab
+        // navigation so the user still reaches WhatsApp.
+        window.location.href = waUrl;
+        return;
+      }
       setDone("qualified");
     } else {
       setDone("disqualified");

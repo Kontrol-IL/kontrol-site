@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SubPageLayout, SubSection } from "../ui/sub-page-layout";
 import { ArticleSchema } from "../schema/Article";
 import { BreadcrumbListSchema } from "../schema/BreadcrumbList";
-import type { BlogArticleMeta } from "@/data/blog";
+import { BLOG_INDEX, type BlogArticleMeta } from "@/data/blog";
 
 interface BlogPostShellProps {
   article: BlogArticleMeta;
@@ -14,6 +14,9 @@ interface BlogPostShellProps {
 
 export function BlogPostShell({ article, children }: BlogPostShellProps) {
   const pageUrl = `/blog/${article.slug}`;
+  const relatedArticles = BLOG_INDEX
+    .filter((a) => a.slug !== article.slug)
+    .slice(0, 3);
   return (
     <SubPageLayout
       breadcrumb={[
@@ -131,22 +134,109 @@ export function BlogPostShell({ article, children }: BlogPostShellProps) {
       </article>
 
       <SubSection>
-        <div style={{ textAlign: "center", marginTop: 60 }}>
+        <div style={{ marginTop: 60 }}>
           <h3
             style={{
               fontSize: "clamp(22px, 2.6vw, 30px)",
               fontWeight: 700,
-              marginBottom: 14,
+              marginBottom: 28,
+              textAlign: "center",
             }}
           >
-            רוצים לבדוק זמינות ב־Kontrol?
+            מאמרים נוספים
           </h3>
-          <p style={{ color: "var(--text-muted)", marginBottom: 22, fontSize: 15 }}>
-            6 שאלות. שתי דקות. תשובה בוואטסאפ.
-          </p>
-          <Link href="/book" className="btn btn--blue">
-            התחילו את השאלון
-          </Link>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 24,
+              marginBottom: 60,
+            }}
+          >
+            {relatedArticles.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/blog/${a.slug}`}
+                className="related-article-card"
+                style={{
+                  display: "block",
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: 12,
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  color: "inherit",
+                  transition: "border-color 0.2s ease, transform 0.2s ease",
+                }}
+              >
+                <div style={{ position: "relative", aspectRatio: "16/9" }}>
+                  <Image
+                    src={`/images/blog/${a.heroImageSlug}.png`}
+                    alt={a.heroImageAlt}
+                    fill
+                    sizes="(max-width: 800px) 100vw, 280px"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div style={{ padding: 18 }}>
+                  <p
+                    style={{
+                      fontSize: 11,
+                      color: "var(--accent)",
+                      letterSpacing: "0.16em",
+                      fontWeight: 500,
+                      marginBottom: 8,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {a.category} · {a.readingMinutes} דק&apos;
+                  </p>
+                  <h4
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 700,
+                      lineHeight: 1.35,
+                      marginBottom: 8,
+                      color: "white",
+                    }}
+                  >
+                    {a.title}
+                  </h4>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      color: "var(--text-muted)",
+                      lineHeight: 1.55,
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {a.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div style={{ textAlign: "center" }}>
+            <h3
+              style={{
+                fontSize: "clamp(22px, 2.6vw, 30px)",
+                fontWeight: 700,
+                marginBottom: 14,
+              }}
+            >
+              רוצים לבדוק זמינות ב־Kontrol?
+            </h3>
+            <p style={{ color: "var(--text-muted)", marginBottom: 22, fontSize: 15 }}>
+              6 שאלות. שתי דקות. תשובה בוואטסאפ.
+            </p>
+            <Link href="/book" className="btn btn--blue">
+              התחילו את השאלון
+            </Link>
+          </div>
         </div>
       </SubSection>
 
@@ -185,6 +275,10 @@ export function BlogPostShell({ article, children }: BlogPostShellProps) {
           margin: 24px 0;
           font-style: italic;
           color: rgba(255,255,255,0.85);
+        }
+        .related-article-card:hover {
+          border-color: var(--accent) !important;
+          transform: translateY(-2px);
         }
       `}</style>
     </SubPageLayout>

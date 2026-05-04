@@ -9,11 +9,12 @@ interface NavProps {
 }
 
 const NAV_ITEMS = [
+  { href: "/services", label: "שירותים" },
   { href: "/how-it-works", label: "איך זה עובד" },
-  { href: "/gallery", label: "גלריה" },
   { href: "/branches", label: "אזור שירות" },
+  { href: "/gallery", label: "גלריה" },
+  { href: "/blog", label: "בלוג" },
   { href: "/about", label: "אודות" },
-  { href: "/faq", label: "שאלות ותשובות" },
   { href: "/contact", label: "צור קשר" },
 ];
 

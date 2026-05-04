@@ -154,6 +154,59 @@ export function MotionFooter() {
           </div>
         </div>
 
+        {/* Footer links grid */}
+        <div className="mf-footer-links">
+          <div className="mf-footer-col">
+            <h3>שירותים</h3>
+            <a href="/services/full-repaint">צביעה מלאה</a>
+            <a href="/services/partial-repaint">צביעה חלקית</a>
+            <a href="/services/color-change">שינוי צבע</a>
+            <a href="/services/body-shop">פחחות</a>
+            <a href="/services/polish">פוליש</a>
+            <a href="/services/scratch-repair">תיקון שריטות</a>
+            <a href="/services/wheel-painting">צביעת חישוקים</a>
+            <a href="/services">כל השירותים &larr;</a>
+          </div>
+          <div className="mf-footer-col">
+            <h3>מידע</h3>
+            <a href="/how-it-works">איך זה עובד</a>
+            <a href="/wholesale-pricing">תמחור סיטונאי</a>
+            <a href="/insurance">ביטוח</a>
+            <a href="/gallery">גלריה</a>
+            <a href="/warranty">אחריות</a>
+            <a href="/customer-guide">מדריך ללקוח</a>
+            <a href="/faq">שאלות ותשובות</a>
+          </div>
+          <div className="mf-footer-col">
+            <h3>בלוג</h3>
+            <a href="/blog/why-car-painting-is-expensive">למה צביעת רכב יקרה?</a>
+            <a href="/blog/inside-paint-shop-economics">כמה עולה למוסך לצבוע</a>
+            <a href="/blog/wholesale-car-painting-real-or-not">מחיר סיטונאי — אמיתי?</a>
+            <a href="/blog/empty-time-paint-ovens">זמן ריק בתנורי צבע</a>
+            <a href="/blog/insurance-vs-private-paint-pricing">ביטוח מול תשלום פרטי</a>
+            <a href="/blog/save-thousands-on-car-painting">חיסכון של אלפי שקלים</a>
+            <a href="/blog">כל המאמרים &larr;</a>
+          </div>
+          <div className="mf-footer-col">
+            <h3>אזורי שירות</h3>
+            <a href="/branches/ashdod">אשדוד (מטה)</a>
+            <a href="/branches/tel-aviv">תל אביב</a>
+            <a href="/branches/jerusalem">ירושלים</a>
+            <a href="/branches/haifa">חיפה</a>
+            <a href="/branches/beer-sheva">באר שבע</a>
+            <a href="/branches/petach-tikva">פתח תקווה</a>
+            <a href="/branches">כל האזורים &larr;</a>
+          </div>
+          <div className="mf-footer-col">
+            <h3>משפטי</h3>
+            <a href="/privacy">מדיניות פרטיות</a>
+            <a href="/terms">תנאי שימוש</a>
+            <a href="/accessibility">הצהרת נגישות</a>
+            <a href="/refund-policy">מדיניות ביטולים</a>
+            <a href="/security">אבטחת מידע</a>
+          </div>
+        </div>
+
         {/* Bottom bar */}
         <div className="mf-bottom">
           <span className="mf-copyright">

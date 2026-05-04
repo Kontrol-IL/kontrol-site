@@ -17,15 +17,6 @@ import { ObjectionHandler } from "@/components/home/objection-handler";
 import { HomepageFAQ } from "@/components/home/homepage-faq";
 import { FinalCta } from "@/components/home/final-cta";
 
-/* ── BEFORE/AFTER CARS (real customers, nationwide) ── */
-const cars = [
-  { name: "מאזדה 3 · 2018 · אשדוד", img: "/images/BETTER/full-painting.png" },
-  { name: "טויוטה קורולה · 2015 · פתח תקווה", img: "/images/BETTER/detailed-painting.png" },
-  { name: "יונדאי i30 · 2019 · חיפה", img: "/images/BETTER/caliper-painting.png" },
-  { name: "קיה ספורטאז' · 2020 · ראשון לציון", img: "/images/BETTER/wheel-painting.png" },
-  { name: "סובארו XV · 2016 · ירושלים", img: "/images/BETTER/local-painting.png" },
-];
-
 /* ── HOOKS ── */
 
 function useMouseFlare(defaultX: string, defaultY: string) {
@@ -111,7 +102,6 @@ const mirrorStyle = { transform: "scaleX(-1)" } as const;
 /* ── PAGE ── */
 export default function Home() {
   const { heroRef, cardRef, headerRef } = useHeroScroll();
-  const galleryFlare = useMouseFlare("75%", "50%");
 
   return (
     <>
@@ -155,42 +145,7 @@ export default function Home() {
       {/* §4 — TRUST STRIP (animated counters) */}
       <TrustStrip />
 
-      {/* §5 — BEFORE/AFTER GALLERY
-          (existing services-grid layout — preserves SectionBackground, ScrollLine,
-          mouse-flare, TypeOnScroll, scard-img treatments) */}
-      <div className="relative overflow-hidden" ref={galleryFlare.sectionRef as React.RefObject<HTMLDivElement>}>
-        <SectionBackground />
-        <ScrollLine />
-        <div className="about-flare" ref={galleryFlare.flareRef} />
-
-        <section className="services">
-          <div className="container" style={{ position: "relative", zIndex: 1 }}>
-            <TypeOnScroll
-              tag="h2"
-              className="services-title"
-              speed={30}
-              text="רכבים שצבענו לאחרונה"
-            />
-            <div className="services-grid">
-              {cars.map((c) => (
-                <div className="scard" key={c.name}>
-                  <TypeOnScroll tag="span" className="scard-name" speed={25} text={c.name} />
-                  <Link href="/gallery" className="scard-link">לפני ואחרי</Link>
-                  <div className="scard-img">
-                    <img src={c.img} alt={c.name} style={mirrorStyle} />
-                  </div>
-                </div>
-              ))}
-              <div className="scard--cta">
-                <h3>רוצים שזה יהיה הרכב שלכם הבא?</h3>
-                <Link href="/book" className="btn btn--white">התחילו את השאלון</Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* §6 — WHY THIS ISN'T A SCAM (objection handler with analogy) */}
+      {/* §5 — WHY THIS ISN'T A SCAM (objection handler with analogy) */}
       <ObjectionHandler />
 
       {/* §7 — HOMEPAGE FAQ (top 6 from /faq + FAQPage schema) */}
