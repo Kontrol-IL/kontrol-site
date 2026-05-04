@@ -8,14 +8,14 @@
 
 ## 0 — Critical orientation (don't skip)
 
-**Project:** kontrolauto.net — Israeli car painting site, "צבע לרכב במחיר סיטונאי" / wholesale-pricing-via-unused-oven-time arbitrage.
+**Project:** kontrolauto.co.il — Israeli car painting site, "צבע לרכב במחיר סיטונאי" / wholesale-pricing-via-unused-oven-time arbitrage.
 
 **Repo path on disk:** `D:/1STPROH/react-site/`
 **Do NOT confuse with:**
 - `D:/1STPROH/website-clone/` — generic forged.build clone scaffold, abandoned, NOT deployed
 - `D:/kontrol-rebuild/` — different brand entirely (Kontrol Technologies smart locks, homekontrol.net)
 
-**Live URL:** https://kontrolauto.net
+**Live URL:** https://kontrolauto.co.il
 **GitHub:** https://github.com/Kontrol-IL/kontrol-site (note: redirected from old `kontrol-ship-it` org)
 **Vercel project:** `prj_PCdOPKdCgxBTOvXlNesbvgzm7Ehl` in team `team_9rg1vAUUERlqHxgdmtt3nVDP`
 **Most recent deploy:** `dpl_8o32iw2qZvEVLCN9qcM4EBoF8mNU` (commit `8490bca`, 2026-05-03)
@@ -194,7 +194,7 @@ Currently 6 mechanism articles are hardcoded as React components in `src/data/bl
 Sanity install: `npm install @sanity/client @sanity/image-url next-sanity sanity`. Studio config: `sanity init` with new project.
 
 ### 🟡 P2 — SEO post-launch (per brief PART 11)
-- **Submit `https://kontrolauto.net/sitemap.xml`** to Google Search Console + Bing Webmaster
+- **Submit `https://kontrolauto.co.il/sitemap.xml`** to Google Search Console + Bing Webmaster
 - **Verify schema** on Google Rich Results Test for at least 5 page types (homepage, /services/full-repaint, /branches/ashdod, /blog/why-car-painting-is-expensive, /faq)
 - **GBP (Google Business Profile)** — claim/verify Ashdod HQ. NAP must match site exactly. Add 30+ photos.
 - **Directory claims (Day 1-30):** midrag.co.il, d.co.il, b144.co.il, easy.co.il, dapei-zahav.co.il
@@ -339,7 +339,7 @@ GitHub auto-deploy to Vercel may not be wired (last session it didn't trigger). 
 vercel --prod --yes
 ```
 
-The CLI is at `/c/Users/dtona/AppData/Roaming/npm/vercel`. Project is linked via `.vercel/project.json`. Production deploys auto-alias to `kontrolauto.net`.
+The CLI is at `/c/Users/dtona/AppData/Roaming/npm/vercel`. Project is linked via `.vercel/project.json`. Production deploys auto-alias to `kontrolauto.co.il`.
 
 ---
 
@@ -356,8 +356,8 @@ npx eslint --quiet src/app src/components src/lib src/data
 npm run build
 
 # Live smoke test
-curl -sI https://kontrolauto.net/ | head -1
-curl -s https://kontrolauto.net/sitemap.xml | grep -c '<loc>'    # should be ~131
+curl -sI https://kontrolauto.co.il/ | head -1
+curl -s https://kontrolauto.co.il/sitemap.xml | grep -c '<loc>'    # should be ~131
 ```
 
 ---

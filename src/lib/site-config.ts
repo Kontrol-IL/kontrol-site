@@ -3,7 +3,7 @@
  * Operator-pending fields use {{...}} placeholders so they can be swapped globally.
  */
 
-export const SITE_URL = "https://kontrolauto.net";
+export const SITE_URL = "https://kontrolauto.co.il";
 export const BRAND_NAME = "Kontrol";
 export const TAGLINE = "צבע לרכב במחיר סיטונאי";
 export const LEGAL_ENTITY = "לוחמים בצבע בע\"מ";

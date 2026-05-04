@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
     event_time: Math.floor(Date.now() / 1000),
     event_id: body.event_id || `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
     action_source: "website",
-    event_source_url: req.headers.get("referer") || "https://kontrolauto.net",
+    event_source_url: req.headers.get("referer") || "https://kontrolauto.co.il",
     user_data: hashed,
     custom_data: body.custom_data || {},
   };

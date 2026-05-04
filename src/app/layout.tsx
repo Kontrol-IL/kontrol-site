@@ -15,7 +15,7 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kontrolauto.net"),
+  metadataBase: new URL("https://kontrolauto.co.il"),
   title: {
     default: "צביעת רכב במחיר סיטונאי | KONTROL",
     template: "%s | KONTROL",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "צביעת רכב במחיר סיטונאי | KONTROL",
     description: 'צביעת רכב מלאה ב־₪3,490 + מע"מ. בכל הארץ. HQ באשדוד.',
-    url: "https://kontrolauto.net",
+    url: "https://kontrolauto.co.il",
     siteName: "Kontrol",
     locale: "he_IL",
     type: "website",
